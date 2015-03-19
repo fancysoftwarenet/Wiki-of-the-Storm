@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
+//import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -74,7 +76,11 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
                 @Override
                 public void onClick(View v) {
                     layoutPersonnage.setBackgroundColor(Color.RED);
+                    ((MainActivity)getActivity()).goToPersonnageFragment();
+                    //android.support.v4.app.Fragment objFragment = null;
+                    //objFragment = new FragmentPersonnages();
                 }
+
             });
 
             TextView personnageName = new TextView(rootview.getContext());

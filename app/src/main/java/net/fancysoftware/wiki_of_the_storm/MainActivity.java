@@ -90,6 +90,8 @@ public class MainActivity extends ActionBarActivity
             case 2:
                 objFragment = new section3_Fragment();
                 break;
+            case 3:
+                objFragment = new personnages_Fragment();
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -145,6 +147,10 @@ public class MainActivity extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToPersonnageFragment(){
+        onNavigationDrawerItemSelected(3);
     }
 
     /**
