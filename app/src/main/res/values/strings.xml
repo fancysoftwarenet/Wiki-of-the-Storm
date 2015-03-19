@@ -17,6 +17,8 @@
     <string name="updated">Updated:</string>
     <string name="url_news_blizzard">http://eu.battle.net/heroes/en/blog/</string>
 
+    <string name="error_retrieve_database">Connection to database impossible</string>
+
     <color name="background_date_news">#4055de</color>
 
 
