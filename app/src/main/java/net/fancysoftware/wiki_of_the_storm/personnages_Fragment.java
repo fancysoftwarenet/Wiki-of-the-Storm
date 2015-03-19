@@ -16,7 +16,7 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
-        rootview = inflater.inflate(R.layout.section3_layout, container, false);
+        rootview = inflater.inflate(R.layout.personnages_layout, container, false);
         return rootview;
     }
 }
