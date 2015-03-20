@@ -60,6 +60,8 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    Bundle bundlePerso = new Bundle();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +94,7 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 3:
                 objFragment = new personnages_Fragment();
+                objFragment.setArguments(bundlePerso);
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -149,7 +152,8 @@ public class MainActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToPersonnageFragment(){
+    public void goToPersonnageFragment(Personnage personnage){
+        bundlePerso.putString("nom", personnage.getNom());
         onNavigationDrawerItemSelected(3);
     }
 

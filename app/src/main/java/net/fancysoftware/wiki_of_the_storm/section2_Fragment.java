@@ -20,6 +20,9 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -64,8 +67,9 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
 
         //textView.setText("SIZE: " + personnages.size() + "\nExemple: "+personnages.get(0).getNom()+"");
 
-        for (Personnage personnage : personnages){
+        for (final Personnage personnage : personnages){
             Log.d("INFOPERSO", "PERSONNAGE : " + personnage.getNom());
+            Log.d("INFOPERSO", "SKILLS : " + personnage.getBasiques().size());
 
             final LinearLayout layoutPersonnage = new LinearLayout(rootview.getContext());
             layoutPersonnage.setGravity(Gravity.CENTER);
@@ -76,7 +80,7 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
                 @Override
                 public void onClick(View v) {
                     layoutPersonnage.setBackgroundColor(Color.RED);
-                    ((MainActivity)getActivity()).goToPersonnageFragment();
+                    ((MainActivity)getActivity()).goToPersonnageFragment(personnage);
                     //android.support.v4.app.Fragment objFragment = null;
                     //objFragment = new FragmentPersonnages();
                 }
