@@ -18,5 +18,7 @@
     <string name="url_news_blizzard">http://eu.battle.net/heroes/fr/blog/</string>
 
     <string name="error_retrieve_database">Impossible de se connecter à la base de donnée</string>
+    <string name="basique">Basiques</string>
+    <string name="heroique">Héroiques</string>
 
 </resources>
