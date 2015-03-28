@@ -32,6 +32,8 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         String histoire = Personnage.PersonnageStatic.personnage.getHistoire();
         ArrayList<Basique> basiques = Personnage.PersonnageStatic.personnage.getBasiques();
         ArrayList<Heroique> heroiques = Personnage.PersonnageStatic.personnage.getHeroiques();
+        ArrayList<Trait> traits = Personnage.PersonnageStatic.personnage.getTraits();
+        ArrayList<Talent> talents = Personnage.PersonnageStatic.personnage.getTalents();
 
         TextView nomPerso = (TextView)rootview.findViewById(R.id.nom_perso);
         nomPerso.setText(nom);
@@ -63,6 +65,36 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
             heroiquePerso.setTextColor(Color.parseColor("#8eb1bc"));
 
             linearLayoutHeroique.addView(heroiquePerso);
+        }
+
+        for (int i = 0; i < traits.size(); i++){
+            LinearLayout linearLayoutTrait = (LinearLayout)rootview.findViewById(R.id.traits);
+
+            TextView traitsPerso = new TextView(rootview.getContext());
+            traitsPerso.setText("   - " + traits.get(i).getNom());
+            traitsPerso.setTextColor(Color.parseColor("#8eb1bc"));
+
+            linearLayoutTrait.addView(traitsPerso);
+        }
+
+        int lastNiveau = 0;
+
+        for (int i = 0; i < talents.size(); i++){
+            LinearLayout linearLayoutTalents = (LinearLayout)rootview.findViewById(R.id.talents);
+
+            if (lastNiveau != talents.get(i).getNiveau()){
+                TextView labelTalentsPerso = new TextView(rootview.getContext());
+                labelTalentsPerso.setText("Niveau " + talents.get(i).getNiveau());
+                labelTalentsPerso.setTextColor(Color.parseColor("#8eb1bc"));
+
+                linearLayoutTalents.addView(labelTalentsPerso);
+                lastNiveau = talents.get(i).getNiveau();
+            }
+            TextView talentsPerso = new TextView(rootview.getContext());
+            talentsPerso.setText("   - " + talents.get(i).getNom());
+            talentsPerso.setTextColor(Color.parseColor("#8eb1bc"));
+
+            linearLayoutTalents.addView(talentsPerso);
         }
 
         return rootview;
