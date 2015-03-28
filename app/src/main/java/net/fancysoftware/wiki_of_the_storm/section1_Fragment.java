@@ -1,8 +1,10 @@
 package net.fancysoftware.wiki_of_the_storm;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
@@ -34,7 +36,7 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             listArticles = null;
         }
 
-        for (HttpGetNews.Article article : listArticles){
+        for (final HttpGetNews.Article article : listArticles){
             LinearLayout linearLayout = (LinearLayout)rootview.findViewById(R.id.liste_news);
 
             /*LinearLayout news = new LinearLayout(this);
@@ -46,6 +48,14 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             params.setMargins(0, 0, 0, 30);
             layoutNews.setLayoutParams(params);
             layoutNews.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
+            layoutNews.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse("http://eu.battle.net" + article.url) );
+                    startActivity(intent);
+                }
+
+            });
 
             LinearLayout dateNews = new LinearLayout(rootview.getContext());
             dateNews.setGravity(17);
