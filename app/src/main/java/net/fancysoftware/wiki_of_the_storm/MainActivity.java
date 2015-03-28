@@ -154,6 +154,7 @@ public class MainActivity extends ActionBarActivity
 
     public void goToPersonnageFragment(Personnage personnage){
         bundlePerso.putString("nom", personnage.getNom());
+        bundlePerso.putString("histoire", personnage.getHistoire());
         onNavigationDrawerItemSelected(3);
     }
 

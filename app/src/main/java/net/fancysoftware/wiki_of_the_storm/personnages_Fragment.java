@@ -24,12 +24,22 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
 
         Bundle bundle = this.getArguments();
         String nom = "Personnage";
+        String histoire = "Histoire";
+        String type = "Type";
         if (bundle != null) {
             nom = bundle.getString("nom");
+            histoire = bundle.getString("histoire");
+            type = bundle.getString("type");
         }
 
         TextView nomPerso = (TextView)rootview.findViewById(R.id.nom_perso);
         nomPerso.setText(nom);
+
+        TextView typePerso = (TextView)rootview.findViewById(R.id.type_perso);
+        typePerso.setText(type);
+
+        TextView histoirePerso = (TextView)rootview.findViewById(R.id.histoire_perso);
+        histoirePerso.setText(histoire);
 
         return rootview;
     }

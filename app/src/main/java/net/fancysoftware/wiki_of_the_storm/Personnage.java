@@ -10,17 +10,35 @@ public class Personnage {
     private int id;
     private String nom;
     private String origine;
+    private String histoire;
+    private String type;
 
+    public String getOrigine(){ return this.origine; }
     public String getNom(){
         return this.nom;
     }
+    public String getHistoire(){
+        return this.histoire;
+    }
+    public String getType(){ return this.type; }
 
     public ArrayList<Basique> getBasiques() {
         return basique;
     }
+    public ArrayList<Heroique> getHeroiques() {
+        return heroique;
+    }
 
     private ArrayList<Basique> basique;
     private ArrayList<Heroique> heroique;
+
+    private ArrayList<Trait> traits;
+
+    public ArrayList<Trait> getTraits() { return traits; }
+
+    private ArrayList<Talent> talents;
+
+    public ArrayList<Talent> getTalents() { return talents; }
 }
 
 class Skill {
@@ -28,6 +46,7 @@ class Skill {
     private String description;
 
     public String getNom() { return nom; }
+    public String getDescription() { return description; }
 }
 
 class Basique extends Skill{
@@ -36,4 +55,22 @@ class Basique extends Skill{
 
 class Heroique extends Skill{
 
+}
+
+class Talent {
+    private int niveau;
+    private String nom;
+    private String description;
+
+    public int getNiveau() { return niveau; }
+    public String getNom() { return nom; }
+    public String getDescription() { return description; }
+}
+
+class Trait {
+    private String nom;
+    private String description;
+
+    public String getNom() { return nom; }
+    public String getDescription() { return description; }
 }
