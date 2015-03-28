@@ -1,6 +1,7 @@
 package net.fancysoftware.wiki_of_the_storm;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -48,7 +49,8 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
             LinearLayout linearLayoutBasqiue = (LinearLayout)rootview.findViewById(R.id.skillsbasiques);
 
             TextView basiquePerso = new TextView(rootview.getContext());
-            basiquePerso.setText(basiques.get(i).getNom());
+            basiquePerso.setText("   - " + basiques.get(i).getNom());
+            basiquePerso.setTextColor(Color.parseColor("#8eb1bc"));
 
             linearLayoutBasqiue.addView(basiquePerso);
         }
@@ -57,7 +59,8 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
             LinearLayout linearLayoutHeroique = (LinearLayout)rootview.findViewById(R.id.skillsheroiques);
 
             TextView heroiquePerso = new TextView(rootview.getContext());
-            heroiquePerso.setText(heroiques.get(i).getNom());
+            heroiquePerso.setText("   - " + heroiques.get(i).getNom());
+            heroiquePerso.setTextColor(Color.parseColor("#8eb1bc"));
 
             linearLayoutHeroique.addView(heroiquePerso);
         }
