@@ -23,17 +23,16 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         rootview = inflater.inflate(R.layout.personnages_layout, container, false);
 
         Bundle bundle = this.getArguments();
-        String nom = "Personnage";
-        String histoire = "Histoire";
-        String type = "Type";
-        if (bundle != null) {
-            nom = bundle.getString("nom");
-            histoire = bundle.getString("histoire");
-            type = bundle.getString("type");
-        }
+        String nom = Personnage.PersonnageStatic.personnage.getNom();
+        String origine = Personnage.PersonnageStatic.personnage.getOrigine();
+        String type = Personnage.PersonnageStatic.personnage.getType();
+        String histoire = Personnage.PersonnageStatic.personnage.getHistoire();
 
         TextView nomPerso = (TextView)rootview.findViewById(R.id.nom_perso);
         nomPerso.setText(nom);
+
+        TextView originePerso = (TextView)rootview.findViewById(R.id.origine_perso);
+        originePerso.setText(getResources().getString(R.string.origine) + ": " + origine);
 
         TextView typePerso = (TextView)rootview.findViewById(R.id.type_perso);
         typePerso.setText(type);

@@ -39,6 +39,11 @@ public class Personnage {
     private ArrayList<Talent> talents;
 
     public ArrayList<Talent> getTalents() { return talents; }
+
+
+    public static class PersonnageStatic{
+        public static Personnage personnage;
+    }
 }
 
 class Skill {

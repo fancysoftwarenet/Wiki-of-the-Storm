@@ -16,6 +16,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/origine" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/origine"
+            android:id="@+id/origine_perso"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/type" />
 
         <TextView
@@ -25,9 +36,9 @@
             android:id="@+id/type_perso"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/histoire" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/histoire" />
 
         <TextView
             android:layout_width="wrap_content"
