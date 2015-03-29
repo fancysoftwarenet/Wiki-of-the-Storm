@@ -73,13 +73,6 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        try{
-            HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard), getApplicationContext());
-            HttpGetNews.Article.listArticles = getterNews.execute().get();
-        }catch (Exception e){
-            HttpGetNews.Article.listArticles = null;
-        }
-
         InputStream is = getResources().openRawResource(R.raw.database);
         BufferedReader r = new BufferedReader(new InputStreamReader(is));
         StringBuilder total = new StringBuilder();

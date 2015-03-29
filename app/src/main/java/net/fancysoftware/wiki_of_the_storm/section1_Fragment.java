@@ -28,6 +28,13 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
         rootview = inflater.inflate(R.layout.section1_layout, container, false);
 
+        try{
+            HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard), getActivity().getApplicationContext());
+            HttpGetNews.Article.listArticles = getterNews.execute().get();
+        }catch (Exception e){
+            HttpGetNews.Article.listArticles = null;
+        }
+
         ArrayList<HttpGetNews.Article> listArticles = HttpGetNews.Article.listArticles;
 
         if (listArticles != null) {
