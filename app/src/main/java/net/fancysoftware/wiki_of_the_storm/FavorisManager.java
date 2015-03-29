@@ -20,9 +20,9 @@ public class FavorisManager {
         try{
             fOut = context.openFileOutput("settings.dat",Context.MODE_APPEND);
             osw = new OutputStreamWriter(fOut);
-            osw.write(data.getID() + "");
+            osw.write(data.getID() + "|");
             osw.flush();
-            //popup surgissant pour le résultat
+            // Toast pour afficher l'ajout du favoris
             Toast.makeText(context, "Favoris ajouté", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
@@ -47,7 +47,7 @@ public class FavorisManager {
             osw = new OutputStreamWriter(fOut);
             osw.write("");
             osw.flush();
-            //popup surgissant pour le résultat
+            // Toast pour afficher l'ajout du favoris
             Toast.makeText(context, "Favoris remis a zéro", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
@@ -75,7 +75,7 @@ public class FavorisManager {
             isr = new InputStreamReader(fIn);
             isr.read(inputBuffer);
             data = new String(inputBuffer);
-            //affiche le contenu de mon fichier dans un popup surgissant
+            // Affiche le contenu des favoris dans un Toast
             Toast.makeText(context, " "+data,Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
