@@ -148,7 +148,9 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         imageFavoris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).addFavoris(Personnage.PersonnageStatic.personnage);
+                FavorisManager fm = new FavorisManager();
+
+                fm.WriteFavoris(rootview.getContext(), Personnage.PersonnageStatic.personnage);
             }
 
         });

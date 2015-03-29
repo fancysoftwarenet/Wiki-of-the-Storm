@@ -76,19 +76,11 @@ public class FavorisManager {
             isr.read(inputBuffer);
             data = new String(inputBuffer);
             // Affiche le contenu des favoris dans un Toast
-            Toast.makeText(context, " "+data,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, " "+data,Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
-            Toast.makeText(context, "Settings not read",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Settings not read",Toast.LENGTH_SHORT).show();
         }
-            /*finally {
-               try {
-                      isr.close();
-                      fIn.close();
-                      } catch (IOException e) {
-                        Toast.makeText(context, "Settings not read",Toast.LENGTH_SHORT).show();
-                      }
-            } */
         return data;
     }
 }
