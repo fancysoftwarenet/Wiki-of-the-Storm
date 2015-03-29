@@ -13,6 +13,7 @@ public class Personnage {
     private String histoire;
     private String type;
 
+    public int getID(){ return this.id; }
     public String getOrigine(){ return this.origine; }
     public String getNom(){
         return this.nom;

@@ -19,6 +19,19 @@
         android:orientation="vertical"
         android:background="#090011"
         android:padding="@dimen/abc_action_bar_default_padding_material">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star"
+            android:contentDescription="Image Type"
+            android:layout_alignParentRight="false"
+            android:id="@+id/imageFavoris"
+            android:layout_marginTop="10px"/>
         <TextView android:id="@+id/nom_perso" android:layout_width="fill_parent" android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment"
             android:textIsSelectable="false"
@@ -28,7 +41,9 @@
             android:shadowColor="#65d2fb"
             android:shadowDx="3"
             android:shadowDy="3"
-            android:shadowRadius="7"/>
+            android:shadowRadius="7"
+            android:layout_marginLeft="0dp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

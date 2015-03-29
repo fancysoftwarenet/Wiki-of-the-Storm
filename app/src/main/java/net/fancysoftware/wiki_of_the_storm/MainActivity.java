@@ -41,6 +41,8 @@ import com.google.gson.reflect.TypeToken;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -98,6 +100,14 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+    }
+
+    public void addFavoris(Personnage personnage){
+        FavorisManager fm = new FavorisManager();
+
+        fm.WriteFavoris(getBaseContext(), personnage);
+        fm.ResetFavoris(getBaseContext());
+        fm.ReadFavoris(getBaseContext());
     }
 
     @Override
