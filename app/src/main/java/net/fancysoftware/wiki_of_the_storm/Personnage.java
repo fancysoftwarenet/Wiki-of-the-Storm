@@ -43,6 +43,8 @@ public class Personnage {
 
     public static class PersonnageStatic{
         public static Personnage personnage;
+
+        public static List<Personnage> personnages;
     }
 }
 

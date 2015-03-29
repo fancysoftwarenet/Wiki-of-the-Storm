@@ -50,7 +50,7 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
         LinearLayout listePersonnage = (LinearLayout)rootview.findViewById(R.id.liste_personnages);
         //TextView textView = (TextView)rootview.findViewById(R.id.textViewSection2);
 
-        InputStream is = rootview.getResources().openRawResource(R.raw.database);
+        /*InputStream is = rootview.getResources().openRawResource(R.raw.database);
         BufferedReader r = new BufferedReader(new InputStreamReader(is));
         StringBuilder total = new StringBuilder();
         String line = "";
@@ -59,17 +59,18 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
             //textView.setText(line);
         }catch (IOException e){
             //textView.setText("Error !");
-        }
+        }*/
 
-        Gson gson = new Gson();
+        /*Gson gson = new Gson();
         Type listType = new TypeToken<List<Personnage>>(){}.getType();
-        List<Personnage> personnages = (List<Personnage>) gson.fromJson(line, listType);
+        List<Personnage> personnages = (List<Personnage>) gson.fromJson(line, listType);*/
+        List<Personnage> personnages = Personnage.PersonnageStatic.personnages;
 
         //textView.setText("SIZE: " + personnages.size() + "\nExemple: "+personnages.get(0).getNom()+"");
 
         for (final Personnage personnage : personnages){
-            Log.d("INFOPERSO", "PERSONNAGE : " + personnage.getNom());
-            Log.d("INFOPERSO", "SKILLS : " + personnage.getBasiques().size());
+            /*Log.d("INFOPERSO", "PERSONNAGE : " + personnage.getNom());
+            Log.d("INFOPERSO", "SKILLS : " + personnage.getBasiques().size());*/
 
             final LinearLayout layoutPersonnage = new LinearLayout(rootview.getContext());
             layoutPersonnage.setGravity(Gravity.CENTER);

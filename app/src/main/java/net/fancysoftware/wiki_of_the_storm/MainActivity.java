@@ -34,10 +34,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
@@ -65,6 +72,23 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        InputStream is = getResources().openRawResource(R.raw.database);
+        BufferedReader r = new BufferedReader(new InputStreamReader(is));
+        StringBuilder total = new StringBuilder();
+        String line = "";
+        try {
+            line = r.readLine();
+            //textView.setText(line);
+        }catch (IOException e){
+            //textView.setText("Error !");
+        }
+
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Personnage>>(){}.getType();
+        Personnage.PersonnageStatic.personnages = (List<Personnage>) gson.fromJson(line, listType);
+
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
