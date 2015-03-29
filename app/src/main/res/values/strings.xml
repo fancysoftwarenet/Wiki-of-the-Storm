@@ -33,5 +33,6 @@
     <string name="heroique">Heroiques</string>
     <string name="traits">Traits</string>
     <string name="talents">Talents</string>
+    <string name="noconnection">Impossible to connect to the news server</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package net.fancysoftware.wiki_of_the_storm;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import org.apache.http.HttpResponse;
@@ -19,13 +20,19 @@ import java.util.ArrayList;
 public class HttpGetNews extends AsyncTask<Void, Void, ArrayList<HttpGetNews.Article>> {
     private String url;
     private String htmlBli;
+    private Context context;
 
-    public HttpGetNews(String url) {
+    public HttpGetNews(String url, Context context) {
         this.url = url;
+        this.context = context;
     }
 
     @Override
     protected ArrayList<Article> doInBackground(Void... params) {
+
+        ConnectionDetector cd = new ConnectionDetector(context);
+        if(!cd.isConnectingToInternet()) { return null; }
+
         htmlBli = getHtml();
         /*Log.d("HTML OUTPUT", htmlBli.split("<article class=\"media-wrapper\">")[1]);
         Log.d("HTML OUTPUT", htmlBli.split("<article class=\"media-wrapper\">")[2]);

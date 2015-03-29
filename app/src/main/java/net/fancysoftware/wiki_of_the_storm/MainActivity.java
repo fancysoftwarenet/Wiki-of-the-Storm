@@ -74,7 +74,7 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
 
         try{
-            HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard));
+            HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard), getApplicationContext());
             HttpGetNews.Article.listArticles = getterNews.execute().get();
         }catch (Exception e){
             HttpGetNews.Article.listArticles = null;

@@ -27,5 +27,6 @@
     <string name="talents">Talents</string>
     <string name="traits">Traits</string>
     <string name="type">Type</string>
+    <string name="noconnection">Connexion au serveur de news impossible</string>
 
 </resources>

@@ -30,4 +30,15 @@
         </LinearLayout>
     </ScrollView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/noconnection"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/noconnection"
+        android:textColor="#FFF"
+        android:gravity="center_vertical|center_horizontal" />
+
 </RelativeLayout>

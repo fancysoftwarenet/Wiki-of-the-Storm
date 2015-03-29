@@ -35,6 +35,8 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             for (final HttpGetNews.Article article : listArticles) {
                 LinearLayout linearLayout = (LinearLayout) rootview.findViewById(R.id.liste_news);
 
+                ((TextView)rootview.findViewById(R.id.noconnection)).setVisibility(View.INVISIBLE);
+
                 /*LinearLayout news = new LinearLayout(this);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
                 news.setLayoutParams(params);
