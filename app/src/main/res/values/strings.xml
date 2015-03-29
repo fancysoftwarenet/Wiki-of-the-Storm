@@ -17,7 +17,11 @@
     <string name="url_news_blizzard">http://eu.battle.net/heroes/en/blog/</string>
     <string name="error_retrieve_database">Connection to database impossible</string>
 
-    <color name="background_date_news">#4055de</color>
+    <!--<color name="background_date_news">#4055de</color>-->
+    <!--<color name="background_date_news">#081535</color>-->
+    <color name="background_date_news">#4b1fbd</color>
+    <!--<color name="background_news">#090011</color>-->
+    <color name="background_news">#080e1a</color>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

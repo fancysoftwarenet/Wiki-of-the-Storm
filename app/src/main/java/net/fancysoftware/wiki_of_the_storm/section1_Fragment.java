@@ -47,7 +47,7 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
             params.setMargins(0, 0, 0, 30);
             layoutNews.setLayoutParams(params);
-            layoutNews.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
+            layoutNews.setBackgroundColor(getResources().getColor(R.color.background_news));
             layoutNews.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -65,7 +65,7 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             layoutNews.addView(dateNews);
 
             TextView dateNewsText = new TextView(rootview.getContext());
-            dateNewsText.setText(article.date);
+            dateNewsText.setText(article.date.split("\n")[0] + "\n" + article.date.split("\n")[1] + "\n" + article.date.split("\n")[2]);
             dateNewsText.setTextColor(Color.WHITE);
             dateNewsText.setGravity(Gravity.CENTER);
             dateNews.addView(dateNewsText);
@@ -78,7 +78,8 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
             news.setText(article.title);
             news.setTypeface(Typeface.create("WikioftheStorm", Typeface.BOLD));
             news.setTextSize(16f);
-            news.setTextColor(Color.argb(255, 100, 100, 100));
+            //news.setTextColor(Color.argb(255, 100, 100, 100));
+            news.setTextColor(Color.WHITE);
             wrapperTitle.addView(news);
 
             linearLayout.addView(layoutNews);
