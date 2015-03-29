@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -74,13 +73,11 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (HttpGetNews.Article.listArticles == null) {
+        try{
             HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard));
-            try {
-                HttpGetNews.Article.listArticles = getterNews.execute().get();
-            } catch (Exception e) {
-                HttpGetNews.Article.listArticles = null;
-            }
+            HttpGetNews.Article.listArticles = getterNews.execute().get();
+        }catch (Exception e){
+            HttpGetNews.Article.listArticles = null;
         }
 
         InputStream is = getResources().openRawResource(R.raw.database);

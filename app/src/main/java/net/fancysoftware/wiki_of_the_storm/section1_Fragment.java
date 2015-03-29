@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,53 +30,56 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
 
         ArrayList<HttpGetNews.Article> listArticles = HttpGetNews.Article.listArticles;
 
-        for (final HttpGetNews.Article article : listArticles){
-            LinearLayout linearLayout = (LinearLayout)rootview.findViewById(R.id.liste_news);
+        if (listArticles != null) {
 
-            /*LinearLayout news = new LinearLayout(this);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
-            news.setLayoutParams(params);
-            news.setBackgroundColor(getResources().getColor(R.color.primary_material_light));*/
-            LinearLayout layoutNews = new LinearLayout(rootview.getContext());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
-            params.setMargins(0, 0, 0, 30);
-            layoutNews.setLayoutParams(params);
-            layoutNews.setBackgroundColor(getResources().getColor(R.color.background_news));
-            layoutNews.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse("http://eu.battle.net" + article.url) );
-                    startActivity(intent);
-                }
+            for (final HttpGetNews.Article article : listArticles) {
+                LinearLayout linearLayout = (LinearLayout) rootview.findViewById(R.id.liste_news);
 
-            });
+                /*LinearLayout news = new LinearLayout(this);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
+                news.setLayoutParams(params);
+                news.setBackgroundColor(getResources().getColor(R.color.primary_material_light));*/
+                LinearLayout layoutNews = new LinearLayout(rootview.getContext());
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
+                params.setMargins(0, 0, 0, 30);
+                layoutNews.setLayoutParams(params);
+                layoutNews.setBackgroundColor(getResources().getColor(R.color.background_news));
+                layoutNews.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://eu.battle.net" + article.url));
+                        startActivity(intent);
+                    }
 
-            LinearLayout dateNews = new LinearLayout(rootview.getContext());
-            dateNews.setGravity(17);
-            LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(180, ViewGroup.LayoutParams.MATCH_PARENT);
-            dateNews.setLayoutParams(params1);
-            dateNews.setBackgroundColor(getResources().getColor(R.color.background_date_news));
-            layoutNews.addView(dateNews);
+                });
 
-            TextView dateNewsText = new TextView(rootview.getContext());
-            dateNewsText.setText(article.date.split("\n")[0] + "\n" + article.date.split("\n")[1] + "\n" + article.date.split("\n")[2]);
-            dateNewsText.setTextColor(Color.WHITE);
-            dateNewsText.setGravity(Gravity.CENTER);
-            dateNews.addView(dateNewsText);
+                LinearLayout dateNews = new LinearLayout(rootview.getContext());
+                dateNews.setGravity(17);
+                LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(180, ViewGroup.LayoutParams.MATCH_PARENT);
+                dateNews.setLayoutParams(params1);
+                dateNews.setBackgroundColor(getResources().getColor(R.color.background_date_news));
+                layoutNews.addView(dateNews);
 
-            LinearLayout wrapperTitle = new LinearLayout(rootview.getContext());
-            wrapperTitle.setPadding(18, 10, 18, 0);
-            layoutNews.addView(wrapperTitle);
+                TextView dateNewsText = new TextView(rootview.getContext());
+                dateNewsText.setText(article.date.split("\n")[0] + "\n" + article.date.split("\n")[1] + "\n" + article.date.split("\n")[2]);
+                dateNewsText.setTextColor(Color.WHITE);
+                dateNewsText.setGravity(Gravity.CENTER);
+                dateNews.addView(dateNewsText);
 
-            TextView news = new TextView(rootview.getContext());
-            news.setText(article.title);
-            news.setTypeface(Typeface.create("WikioftheStorm", Typeface.BOLD));
-            news.setTextSize(16f);
-            //news.setTextColor(Color.argb(255, 100, 100, 100));
-            news.setTextColor(Color.WHITE);
-            wrapperTitle.addView(news);
+                LinearLayout wrapperTitle = new LinearLayout(rootview.getContext());
+                wrapperTitle.setPadding(18, 10, 18, 0);
+                layoutNews.addView(wrapperTitle);
 
-            linearLayout.addView(layoutNews);
+                TextView news = new TextView(rootview.getContext());
+                news.setText(article.title);
+                news.setTypeface(Typeface.create("WikioftheStorm", Typeface.BOLD));
+                news.setTextSize(16f);
+                //news.setTextColor(Color.argb(255, 100, 100, 100));
+                news.setTextColor(Color.WHITE);
+                wrapperTitle.addView(news);
+
+                linearLayout.addView(layoutNews);
+            }
         }
 
         return rootview;
