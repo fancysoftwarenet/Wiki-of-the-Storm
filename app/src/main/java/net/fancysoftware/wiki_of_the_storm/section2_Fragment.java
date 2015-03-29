@@ -74,12 +74,14 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
             final LinearLayout layoutPersonnage = new LinearLayout(rootview.getContext());
             layoutPersonnage.setGravity(Gravity.CENTER);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250);
+            params.setMargins(10, 10, 10, 0);
             layoutPersonnage.setLayoutParams(params);
-            layoutPersonnage.setBackgroundColor(getResources().getColor(R.color.background_date_news));
+            //layoutPersonnage.setBackgroundColor(getResources().getColor(R.color.background_date_news));
+            layoutPersonnage.setBackgroundColor(Color.parseColor("#090011"));
             layoutPersonnage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    layoutPersonnage.setBackgroundColor(Color.RED);
+                    layoutPersonnage.setBackgroundColor(Color.parseColor("#230041"));
                     ((MainActivity)getActivity()).goToPersonnageFragment(personnage);
                     //android.support.v4.app.Fragment objFragment = null;
                     //objFragment = new FragmentPersonnages();
@@ -89,6 +91,9 @@ public class section2_Fragment extends android.support.v4.app.Fragment{
 
             TextView personnageName = new TextView(rootview.getContext());
             personnageName.setText(personnage.getNom());
+            personnageName.setTextColor(Color.WHITE);
+            personnageName.setShadowLayer(7, 3, 3, Color.parseColor("#65d2fb"));
+            personnageName.setTextSize(1, 22);
             layoutPersonnage.addView(personnageName);
 
             listePersonnage.addView(layoutPersonnage);
