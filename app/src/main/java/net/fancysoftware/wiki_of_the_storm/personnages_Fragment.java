@@ -2,11 +2,14 @@ package net.fancysoftware.wiki_of_the_storm;
 
 import android.app.Fragment;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -96,6 +99,40 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
 
             linearLayoutTalents.addView(talentsPerso);
         }
+
+        Drawable imageTypeDraw;
+
+        switch (type.split(" ")[0]){
+            case "Assassin":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.assassin);
+                break;
+
+            case "Guerrier":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.guerrier);
+                break;
+
+            case "Spécialiste":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.specialiste);
+                break;
+
+            case "Specialiste":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.specialiste);
+                break;
+
+            case "Support":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.soutien);
+                break;
+
+            case "Soutien":
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.soutien);
+                break;
+
+            default:
+                imageTypeDraw = rootview.getResources().getDrawable(R.drawable.assassin);
+                break;
+        }
+        ImageView imageType = (ImageView)rootview.findViewById(R.id.imageType);
+        imageType.setImageDrawable(imageTypeDraw);
 
         return rootview;
     }

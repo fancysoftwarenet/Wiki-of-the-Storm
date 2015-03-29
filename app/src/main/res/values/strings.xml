@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Wiki-Of-The-Storm</string>
+    <string name="app_name">Wiki of the Storm</string>
     <string name="title_section1">Actuality</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -21,9 +21,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="histoire">Histoire</string>
+    <string name="histoire">Story</string>
     <string name="type">Type</string>
-    <string name="origine">Origine</string>
+    <string name="origine">Origin</string>
     <string name="skills">Skills</string>
     <string name="basique">Basiques</string>
     <string name="heroique">Heroiques</string>
