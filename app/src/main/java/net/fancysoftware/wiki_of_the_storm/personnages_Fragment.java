@@ -39,6 +39,7 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         rootview = inflater.inflate(R.layout.personnages_layout, container, false);
 
         Bundle bundle = this.getArguments();
+        int id = Personnage.PersonnageStatic.personnage.getID();
         String nom = Personnage.PersonnageStatic.personnage.getNom();
         String origine = Personnage.PersonnageStatic.personnage.getOrigine();
         String type = Personnage.PersonnageStatic.personnage.getType();
@@ -145,6 +146,15 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         imageType.setImageDrawable(imageTypeDraw);
 
         ImageView imageFavoris = (ImageView)rootview.findViewById(R.id.imageFavoris);
+
+        FavorisManager fm = new FavorisManager();
+
+        boolean isFavoris = fm.isFavoris(rootview.getContext(), Integer.toString(id));
+
+        if (isFavoris){
+            imageFavoris.setImageDrawable(rootview.getResources().getDrawable(R.drawable.star));
+        }
+
         imageFavoris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

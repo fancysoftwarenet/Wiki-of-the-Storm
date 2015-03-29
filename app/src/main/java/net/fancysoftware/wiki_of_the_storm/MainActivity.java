@@ -75,10 +75,6 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FavorisManager fm = new FavorisManager();
-
-        fm.ResetFavoris(getBaseContext());
-
         InputStream is = getResources().openRawResource(R.raw.database);
         BufferedReader r = new BufferedReader(new InputStreamReader(is));
         StringBuilder total = new StringBuilder();

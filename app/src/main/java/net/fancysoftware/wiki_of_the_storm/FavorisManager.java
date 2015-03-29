@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 /**
  * Created by Paul on 29/03/2015.
@@ -82,5 +83,18 @@ public class FavorisManager {
             //Toast.makeText(context, "Settings not read",Toast.LENGTH_SHORT).show();
         }
         return data;
+    }
+
+    public boolean isFavoris(Context context, String id){
+        FavorisManager fm = new FavorisManager();
+        String favoris = fm.ReadFavoris(context).trim().replace('\u0000', ' ').trim();
+        String[] favorisArray = favoris.split("|");
+        for (int i = 0; i < favorisArray.length; i++){
+            if(favorisArray[i].equals(id)){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
