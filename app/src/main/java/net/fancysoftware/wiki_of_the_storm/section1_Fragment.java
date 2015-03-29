@@ -27,14 +27,7 @@ public class section1_Fragment extends android.support.v4.app.Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
         rootview = inflater.inflate(R.layout.section1_layout, container, false);
 
-        ArrayList<HttpGetNews.Article> listArticles;
-
-        HttpGetNews getterNews = new HttpGetNews(getResources().getString(R.string.url_news_blizzard));
-        try{
-            listArticles = getterNews.execute().get();
-        }catch (Exception e){
-            listArticles = null;
-        }
+        ArrayList<HttpGetNews.Article> listArticles = HttpGetNews.Article.listArticles;
 
         for (final HttpGetNews.Article article : listArticles){
             LinearLayout linearLayout = (LinearLayout)rootview.findViewById(R.id.liste_news);

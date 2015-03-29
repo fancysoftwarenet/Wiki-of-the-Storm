@@ -115,5 +115,7 @@ public class HttpGetNews extends AsyncTask<Void, Void, ArrayList<HttpGetNews.Art
             this.date = date;
             this.url = url;
         }
+
+        public static ArrayList<HttpGetNews.Article> listArticles;
     }
 }
