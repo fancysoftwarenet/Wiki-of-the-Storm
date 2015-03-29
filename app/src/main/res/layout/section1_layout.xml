@@ -17,7 +17,8 @@
                 android:src="@drawable/logo_hots"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="80px"/>
+                android:layout_marginBottom="80px"
+                android:layout_gravity="center_horizontal" />
 
             <LinearLayout
                 android:id="@+id/liste_news"
