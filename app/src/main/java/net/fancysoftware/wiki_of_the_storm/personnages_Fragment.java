@@ -145,11 +145,11 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
         ImageView imageType = (ImageView)rootview.findViewById(R.id.imageType);
         imageType.setImageDrawable(imageTypeDraw);
 
-        ImageView imageFavoris = (ImageView)rootview.findViewById(R.id.imageFavoris);
+        final ImageView imageFavoris = (ImageView)rootview.findViewById(R.id.imageFavoris);
 
         FavorisManager fm = new FavorisManager();
 
-        boolean isFavoris = fm.isFavoris(rootview.getContext(), Integer.toString(id));
+        final boolean isFavoris = fm.isFavoris(rootview.getContext(), Integer.toString(id));
 
         if (isFavoris){
             imageFavoris.setImageDrawable(rootview.getResources().getDrawable(R.drawable.star));
@@ -160,7 +160,15 @@ public class personnages_Fragment extends android.support.v4.app.Fragment{
             public void onClick(View v) {
                 FavorisManager fm = new FavorisManager();
 
-                fm.WriteFavoris(rootview.getContext(), Personnage.PersonnageStatic.personnage);
+                if (!isFavoris){
+                    fm.WriteFavoris(rootview.getContext(), Personnage.PersonnageStatic.personnage);
+                    imageFavoris.setImageDrawable(rootview.getResources().getDrawable(R.drawable.star));
+                    ((MainActivity)getActivity()).goToPersonnageFragment(Personnage.PersonnageStatic.personnage);
+                }else{
+                    fm.DeleteFavoris(rootview.getContext(), Integer.toString(Personnage.PersonnageStatic.personnage.getID()));
+                    imageFavoris.setImageDrawable(rootview.getResources().getDrawable(R.drawable.star_vide));
+                    ((MainActivity)getActivity()).goToPersonnageFragment(Personnage.PersonnageStatic.personnage);
+                }
             }
 
         });

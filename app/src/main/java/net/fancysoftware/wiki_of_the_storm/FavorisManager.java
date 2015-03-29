@@ -19,7 +19,7 @@ public class FavorisManager {
         OutputStreamWriter osw = null;
 
         try{
-            fOut = context.openFileOutput("settings.dat",Context.MODE_APPEND);
+            fOut = context.openFileOutput("favoris.dat",Context.MODE_APPEND);
             osw = new OutputStreamWriter(fOut);
             osw.write(data.getID() + "|");
             osw.flush();
@@ -44,7 +44,7 @@ public class FavorisManager {
         OutputStreamWriter osw = null;
 
         try{
-            fOut = context.openFileOutput("settings.dat",Context.MODE_PRIVATE);
+            fOut = context.openFileOutput("favoris.dat",Context.MODE_PRIVATE);
             osw = new OutputStreamWriter(fOut);
             osw.write("");
             osw.flush();
@@ -72,7 +72,7 @@ public class FavorisManager {
         String data = null;
 
         try{
-            fIn = context.openFileInput("settings.dat");
+            fIn = context.openFileInput("favoris.dat");
             isr = new InputStreamReader(fIn);
             isr.read(inputBuffer);
             data = new String(inputBuffer);
@@ -86,8 +86,7 @@ public class FavorisManager {
     }
 
     public boolean isFavoris(Context context, String id){
-        FavorisManager fm = new FavorisManager();
-        String favoris = fm.ReadFavoris(context).trim().replace('\u0000', ' ').trim();
+        String favoris = ReadFavoris(context).trim().replace('\u0000', ' ').trim();
         String[] favorisArray = favoris.split("|");
         for (int i = 0; i < favorisArray.length; i++){
             if(favorisArray[i].equals(id)){
@@ -96,5 +95,34 @@ public class FavorisManager {
         }
 
         return false;
+    }
+
+    public void DeleteFavoris(Context context, String id){
+        String favoris = ReadFavoris(context);
+
+        favoris = favoris.replace(id + "|", "");
+
+        FileOutputStream fOut = null;
+        OutputStreamWriter osw = null;
+
+        try{
+            fOut = context.openFileOutput("favoris.dat",Context.MODE_PRIVATE);
+            osw = new OutputStreamWriter(fOut);
+            osw.write(favoris);
+            osw.flush();
+            // Toast pour afficher l'ajout du favoris
+            Toast.makeText(context, "Favoris supprimé", Toast.LENGTH_SHORT).show();
+        }
+        catch (Exception e) {
+            Toast.makeText(context, "Erreur lors de la suppresion",Toast.LENGTH_SHORT).show();
+        }
+        finally {
+            try {
+                osw.close();
+                fOut.close();
+            } catch (IOException e) {
+                Toast.makeText(context, "Erreur lors de la suppresion",Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

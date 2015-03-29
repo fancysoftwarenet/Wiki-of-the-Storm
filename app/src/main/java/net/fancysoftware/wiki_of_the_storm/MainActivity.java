@@ -34,6 +34,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -46,6 +47,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -74,6 +76,18 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FileOutputStream fOut = null;
+        OutputStreamWriter osw = null;
+
+        try{
+            fOut = openFileOutput("favoris.dat",Context.MODE_APPEND);
+            osw = new OutputStreamWriter(fOut);
+            osw.write("");
+            osw.flush();
+        }catch (Exception e){
+            Toast.makeText(getBaseContext(), "Erreur lors de l'initialisation des favoris", Toast.LENGTH_SHORT).show();
+        }
 
         InputStream is = getResources().openRawResource(R.raw.database);
         BufferedReader r = new BufferedReader(new InputStreamReader(is));
