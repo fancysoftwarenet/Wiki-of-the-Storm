@@ -10,6 +10,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:scrollbarAlwaysDrawHorizontalTrack="false">
+    <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -123,6 +126,15 @@
         </LinearLayout>
 
     </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:src="@drawable/assassin"
+        android:contentDescription="Image Type"
+        android:layout_alignParentRight="true"
+        android:id="@+id/imageType"/>
+    </RelativeLayout>
     </ScrollView>
 
 </FrameLayout>
