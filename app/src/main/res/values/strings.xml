@@ -29,17 +29,17 @@
     <string name="type">Type</string>
     <string name="origine">Origin</string>
     <string name="skills">Skills</string>
-    <string name="basique">Basiques</string>
-    <string name="heroique">Heroiques</string>
+    <string name="basique">Basic</string>
+    <string name="heroique">Heroic</string>
     <string name="traits">Traits</string>
     <string name="talents">Talents</string>
     <string name="noconnection">Impossible to connect to the news server</string>
-    <string name="noinitfavoris">Erreur lors de l initialisation des favoris</string>
-    <string name="addfavoris">Favoris ajouté</string>
-    <string name="addError">Erreur lors de l ajout</string>
-    <string name="resetfavoris">Favoris remis a zéro</string>
-    <string name="delfavoris">Favoris supprimé</string>
-    <string name="delerror">Erreur lors de la suppresion</string>
+    <string name="noinitfavoris">Error while initiliazing favorites</string>
+    <string name="addfavoris">Favorite added</string>
+    <string name="addError">Error while adding the favorite</string>
+    <string name="resetfavoris">Favorites setted to null</string>
+    <string name="delfavoris">Favorite deleted</string>
+    <string name="delerror">Error while deleting</string>
     <string name="version">Version 0.1</string>
 
 </resources>
