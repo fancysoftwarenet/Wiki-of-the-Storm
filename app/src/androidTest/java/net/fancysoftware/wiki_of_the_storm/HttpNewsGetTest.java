@@ -25,6 +25,6 @@ public class HttpNewsGetTest extends InstrumentationTestCase {
 
     public void testRecuTitleArticles(){
         assertFalse(listArticles.get(0).url == "");
-        assertTrue(listArticles.get(1).url == "LUMIÈRE SUR SYLVANAS");
+        assertTrue(listArticles.get(1).url == "Lumière sur Sylvanas");
     }
 }
