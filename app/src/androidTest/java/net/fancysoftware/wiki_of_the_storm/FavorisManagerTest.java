@@ -23,4 +23,11 @@ public class FavorisManagerTest extends InstrumentationTestCase{
         assertTrue(fm.isFavoris(null, Integer.toString(personnage.getID())));
         assertFalse(fm.isFavoris(null, "7"));
     }
+
+    public void testRemoveFavoris(){
+        fm.WriteFavoris(null, personnage);
+        assertTrue(fm.isFavoris(null, Integer.toString(personnage.getID())));
+        fm.DeleteFavoris(null, Integer.toString(personnage.getID()));
+        assertFalse(fm.isFavoris(null, Integer.toString(personnage.getID())));
+    }
 }
