@@ -18,10 +18,12 @@ public class FavorisManager {
         FileOutputStream fOut = null;
         OutputStreamWriter osw = null;
 
+        String favoris = ReadFavoris(context).trim().replace('\u0000', ' ').trim();
+
         try{
-            fOut = context.openFileOutput("favoris.dat",Context.MODE_APPEND);
+            fOut = context.openFileOutput("favoris.dat",Context.MODE_PRIVATE);
             osw = new OutputStreamWriter(fOut);
-            osw.write(data.getID() + "|");
+            osw.write(favoris + data.getID() + "|");
             osw.flush();
             // Toast pour afficher l'ajout du favoris
             Toast.makeText(context, context.getResources().getString(R.string.addfavoris), Toast.LENGTH_SHORT).show();
