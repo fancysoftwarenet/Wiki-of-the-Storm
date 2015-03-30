@@ -24,17 +24,17 @@ public class FavorisManager {
             osw.write(data.getID() + "|");
             osw.flush();
             // Toast pour afficher l'ajout du favoris
-            Toast.makeText(context, "Favoris ajouté", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.addfavoris), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
-            Toast.makeText(context, "Erreur lors de l'ajout",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.addError),Toast.LENGTH_SHORT).show();
         }
         finally {
             try {
                 osw.close();
                 fOut.close();
             } catch (IOException e) {
-                Toast.makeText(context, "Erreur lors de l'ajout",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getResources().getString(R.string.addError),Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -49,17 +49,17 @@ public class FavorisManager {
             osw.write("");
             osw.flush();
             // Toast pour afficher l'ajout du favoris
-            Toast.makeText(context, "Favoris remis a zéro", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.resetfavoris), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
-            Toast.makeText(context, "Erreur lors de l'ajout",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.addError),Toast.LENGTH_SHORT).show();
         }
         finally {
             try {
                 osw.close();
                 fOut.close();
             } catch (IOException e) {
-                Toast.makeText(context, "Erreur lors de l'ajout",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getResources().getString(R.string.addError),Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -111,17 +111,17 @@ public class FavorisManager {
             osw.write(favoris);
             osw.flush();
             // Toast pour afficher l'ajout du favoris
-            Toast.makeText(context, "Favoris supprimé", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.delfavoris), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {
-            Toast.makeText(context, "Erreur lors de la suppresion",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.delerror),Toast.LENGTH_SHORT).show();
         }
         finally {
             try {
                 osw.close();
                 fOut.close();
             } catch (IOException e) {
-                Toast.makeText(context, "Erreur lors de la suppresion",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getResources().getString(R.string.delerror),Toast.LENGTH_SHORT).show();
             }
         }
     }

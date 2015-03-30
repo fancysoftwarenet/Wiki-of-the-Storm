@@ -28,5 +28,12 @@
     <string name="traits">Traits</string>
     <string name="type">Type</string>
     <string name="noconnection">Connexion au serveur de news impossible</string>
+    <string name="noinitfavoris">Erreur lors de l initialisation des favoris</string>
+    <string name="addfavoris">Favoris ajouté</string>
+    <string name="addError">Erreur lors de l ajout</string>
+    <string name="resetfavoris">Favoris remis a zéro</string>
+    <string name="delfavoris">Favoris supprimé</string>
+    <string name="delerror">Erreur lors de la suppresion</string>
+    <string name="version">Version 0.1</string>
 
 </resources>

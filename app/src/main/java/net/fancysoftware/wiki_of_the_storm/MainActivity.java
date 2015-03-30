@@ -86,7 +86,7 @@ public class MainActivity extends ActionBarActivity
             osw.write("");
             osw.flush();
         }catch (Exception e){
-            Toast.makeText(getBaseContext(), "Erreur lors de l'initialisation des favoris", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), getResources().getString(R.string.noinitfavoris), Toast.LENGTH_SHORT).show();
         }
 
         InputStream is = getResources().openRawResource(R.raw.database);
